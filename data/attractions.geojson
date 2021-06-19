@@ -1,0 +1,16 @@
+{
+"type":"FeatureCollection",
+
+"features":[
+
+{"geometry": {"type": "Point", "coordinates": [13.376300000000072, 52.51860000000005]}, "type": "Feature", "id": 0, "properties": {"id": "1", "web": "https://en.wikipedia.org/wiki/Reichstag_building", "image": "1_Berlin_reichstag_west_panorama.jpg", "Name": "Reichstag", "PopupInfo": "Reichstag, Berlin, Germany"}},
+
+{"geometry": {"type": "Point", "coordinates": [13.402778000000069, 52.51750000000004]}, "type": "Feature", "id": 1, "properties": {"id": "2", "web": "https://en.wikipedia.org/wiki/Humboldt_Forum", "image": "4_Berlin_Humboldt_Forum.jpeg", "Name": "Humboldt Forum", "PopupInfo": "Humboldt Forum, Berlin, Germany"}},
+
+{"geometry": {"type": "Point", "coordinates": [13.392778000000021, 52.513611000000026]}, "type": "Feature", "id": 2, "properties": {"id": "3", "web": "https://en.wikipedia.org/wiki/Gendarmenmarkt", "image": "5_Berlin_Panorama_Gendarmenmarkt.jpg", "Name": "Gendarmenmarkt", "PopupInfo": "Gendarmenmarkt, Berlin, Germany"}},
+
+{"geometry": {"type": "Point", "coordinates": [13.377722000000063, 52.51627200000007]}, "type": "Feature", "id": 3, "properties": {"id": "4", "web": "https://en.wikipedia.org/wiki/Brandenburg_Gate", "image": "2_Berlin_Brandenburger_Gate.jpg", "Name": "Brandenburg Gate", "PopupInfo": "Brandenburg Gate, Berlin, Germany"}},
+
+{"geometry": {"type": "Point", "coordinates": [13.409444000000065, 52.52083300000004]}, "type": "Feature", "id": 4, "properties": {"id": "5", "web": "https://en.wikipedia.org/wiki/Fernsehturm_Berlin", "image": "3_Berlin_Television_Tower_Fernsehturm.jpg", "Name": "Berlin Television Tower Fernsehturm", "PopupInfo": "Berlin Television Tower Fernsehturm, Berlin, Germany"}}
+]
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Berlin Web Map</title>
+    <!-- Bootstrap CDN link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- load Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- load Leaflet js -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Load Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Load Ajax -->
+    <script src="resources/leaflet.ajax.js"></script>
+
+
+    <!-- CSS Coding -->
+    <style>
+        #header {
+            height: 75px;
+            background-color: darkgoldenrod;
+        }
+
+        
+        #mapdiv {
+            height: 800px;
+            background-color: salmon;
+        }
+
+        #footer {
+            height: 100px;
+            background-color: darkgray;
+        }
+
+        #map_coords {
+
+	}
+
+                
+    </style>
+</head>
+
+<body>
+    <!-- Page Layout -->
+    <div id="header" class="col-md-12">
+        <h1 class="text-center">Berlin City</h1>
+    </div>
+
+    <div id="mapdiv" class="col-md-12">
+    </div>
+    <div id="footer" class="dol-md-10">
+        <h4 id="map_coords" class="text-center"> Latitude: 13.40 Longitude:52.52 Zoom Level:11 </h4>
+
+    </div>
+    <!-- Javascript for Initialize Map & View OSM  -->
+    <script>
+        // Initialize Map
+        var mymap = L.map('mapdiv')
+        mymap.setView([52.52, 13.40], 15);
+
+        // View OSM
+        var backgroundLayer = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
+        mymap.addLayer(backgroundLayer);
+	
+	// Add Points & Popup
+        var reichstagMarker= L.marker([52.5186, 13.3763]).addTo(mymap).bindPopup("<h3 class = 'text-center'>Reichstag</h3><a href='https://en.wikipedia.org/wiki/Reichstag_building' target='blank'><img src='img/1_Berlin_reichstag_west_panorama.jpg' width='200px' >");
+	var brandenburgMarker= L.marker([52.516272, 13.377722]).addTo(mymap).bindPopup("<h3 class = 'text-center'>Brandenburg Gate</h3><a href='https://en.wikipedia.org/wiki/Brandenburg_Gate' target='blank'><img src='img/2_Berlin_Brandenburger_Gate.jpg' width='200px' >");
+	var fernsehturmMarker= L.marker([52.520833, 13.409444]).addTo(mymap).bindPopup("<h3 class = 'text-center'>Berlin Television Tower Fernsehturm</h3><a href='https://en.wikipedia.org/wiki/Fernsehturm_Berlin' target='blank'><img src='img/3_Berlin_Television_Tower_Fernsehturm.jpg' width='200px' >");
+	var humboldtMarker= L.marker([52.5175, 13.402778]).addTo(mymap).bindPopup("<h3 class = 'text-center'>Humboldt Forum</h3><a href='https://en.wikipedia.org/wiki/Humboldt_Forum' target='blank'><img src='img/4_Berlin_Humboldt_Forum.jpg' width='200px' >");
+	var gendarmenmarktMarker= L.marker([52.513611, 13.392778]).addTo(mymap).bindPopup("<h3 class = 'text-center'>Gendarmenmarkt</h3><a href='https://en.wikipedia.org/wiki/Z%C3%B3calo' target='blank'><img src='img/5_Berlin_Panorama_Gendarmenmarkt.jpg' width='200px' >");
+	
+        // handle map event(e) mouse move 
+        mymap.on('mousemove', function(e) {
+            var str = "Latitude: " + e.latlng.lat.toFixed(5) + " Longitude: " + e.latlng.lng.toFixed(5) + " Zoom Level: " + mymap.getZoom();
+            $("#map_coords").html(str); // jQuery                
+        });
+
+    </script>
+</body>
+
+</html>
